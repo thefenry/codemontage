@@ -13,7 +13,7 @@ class Organization < ActiveRecord::Base
   attr_accessor :is_public_submission
 
   validates_presence_of :name
-  validates_presence_of :github_org, if: :is_public_submission
+  validates_presence_of :github_org
 
   # Paperclip
   has_attached_file :logo, styles: { thumb: '100x100>', medium: '250x250>' },
