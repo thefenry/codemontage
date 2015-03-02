@@ -13,11 +13,11 @@ describe Organization do
 
     context 'if not public submission' do
       before { subject.stub(:is_public_submission) { false } }
-      it { should_not validate_presence_of(:github_org) }
+      it { should validate_presence_of(:github_org) }
     end
 
     context 'if not public submission, implicit' do
-      it { should_not validate_presence_of(:github_org) }
+      it { should validate_presence_of(:github_org) }
     end
   end
 
